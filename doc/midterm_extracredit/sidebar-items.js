@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":[["main","Formats the output from the City struct "]],"struct":[["City",""],["Color",""]]};

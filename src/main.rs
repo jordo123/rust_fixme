@@ -10,14 +10,9 @@ struct City {
     lon: f32,
 }
 
+ 
 impl Display for City {
     // `f` is a buffer, this method must write the formatted string into it
-
-    /// Formats the output from the City struct 
-    ///
-    /// Creates a char for the direction of the coordinates and writes it 
-    /// using the formatting with the absolute value of the lon and lat plus the 
-    /// char created. 
     fn fmt(&self, f: &mut Formatter) -> fmt::Result {
         let lat_c = if self.lat >= 0.0 { 'N' } else { 'S' };
         let lon_c = if self.lon >= 0.0 { 'E' } else { 'W' };
@@ -34,20 +29,24 @@ struct Color {
     green: u8,
     blue: u8,
 }
-
+///Formats the output of the Color struct 
+/// 
+///Uses the format to output the struct
 impl Display for Color {
     // `f` is a buffer, this method must write the formatted string into it
 
-    /// Formats the output of the Color struct 
-    /// 
-    /// Uses the format to output the struct
+    
     fn fmt(&self, f: &mut Formatter) -> fmt::Result {
         // `write!` is like `format!`, but it will write the formatted string into a buffer (the first argument)
         write!(f, "red: {},green: {},blue: {}",self.red, self.green, self.blue)
     }
 }
 
-
+///Formats the output from the City struct 
+///
+///Creates a char for the direction of the coordinates and writes it 
+///using the formatting with the absolute value of the lon and lat plus the 
+///char created.
 fn main() {
     for city in [
         City { name: "Glassboro", lat: 39.702892, lon: -75.111839 },
